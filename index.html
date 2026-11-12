@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warren Daisey | Biomedical Science &amp; Political Science Student</title>
+  <meta name="description" content="Warren Daisey is an award-winning Biomedical Science and Political Science student at Commonwealth University–Bloomsburg, pursuing a career in biomedical sales.">
+  <meta name="theme-color" content="#0C1B33">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0C1B33;
+      --navy-mid: #152844;
+      --navy-soft: #1E3A5F;
+      --ink: #1C2430;
+      --muted: #5B6573;
+      --paper: #F6F4EF;
+      --white: #FFFFFF;
+      --line: #E2DED6;
+      --gold: #B8955A;
+      --gold-soft: #E8D9B8;
+      --max: 1080px;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      font-size: 1.0625rem;
+      font-variant-numeric: lining-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+
+    a { color: var(--navy-soft); text-underline-offset: 3px; }
+    a:hover { color: var(--navy); }
+
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--white);
+      color: var(--navy);
+      padding: 0.6rem 1rem;
+      z-index: 100;
+    }
+    .skip:focus { top: 1rem; }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(12, 27, 51, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184, 149, 90, 0.28);
+    }
+
+    .header-inner, .wrap {
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin-inline: auto;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 4.25rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-mark {
+      width: 2.15rem;
+      height: 2.15rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-soft);
+      display: grid;
+      place-items: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+    }
+
+    .logo-name { font-size: 0.95rem; }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      padding: 0.45rem 0.7rem;
+      font: inherit;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.15rem 1.15rem;
+      list-style: none;
+    }
+
+    .nav-list a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-list a:hover { color: var(--gold-soft); }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(184,149,90,0.16), transparent 50%),
+        linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--white);
+      padding: 5.5rem 0 5rem;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .monogram {
+      width: 8.5rem;
+      height: 8.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 3.15rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold-soft);
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 0 0 8px rgba(184,149,90,0.08);
+      flex-shrink: 0;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.6rem, 5vw, 4.1rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .pronouns {
+      display: inline-block;
+      margin-left: 0.55rem;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: rgba(255,255,255,0.62);
+      vertical-align: middle;
+    }
+
+    .headline {
+      margin-top: 1.15rem;
+      max-width: 40rem;
+      font-size: 1.12rem;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.55;
+    }
+
+    .hero-meta {
+      margin-top: 1.15rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem 1.25rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+    }
+
+    .hero-meta span + span::before {
+      content: "";
+    }
+
+    .dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-right: 1.25rem;
+      vertical-align: middle;
+    }
+
+    .hero-actions {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.35rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-primary:hover { background: var(--gold-soft); color: var(--navy); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.28);
+    }
+    .btn-ghost:hover { border-color: var(--gold-soft); color: var(--gold-soft); }
+
+    /* Sections */
+    main section {
+      padding: 4.25rem 0;
+    }
+
+    main section + section {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.9rem, 3vw, 2.45rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .lede, .prose p { max-width: 46rem; }
+    .prose p + p { margin-top: 1rem; }
+
+    .muted { color: var(--muted); }
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      margin-top: 0.2rem;
+    }
+
+    /* Highlights */
+    .award-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.1rem;
+    }
+
+    .award {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 1.4rem 1.45rem 1.35rem;
+      border-top: 3px solid var(--gold);
+    }
+
+    .award-place {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+
+    .award p { margin-top: 0.45rem; color: var(--muted); font-size: 0.95rem; }
+
+    /* Experience */
+    .role {
+      padding: 1.5rem 0;
+      display: grid;
+      grid-template-columns: 11.5rem 1fr;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .role:first-of-type { border-top: 1px solid var(--line); }
+
+    .role-dates {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding-top: 0.3rem;
+    }
+
+    .role ul, .card ul {
+      margin: 0.7rem 0 0 1.15rem;
+      color: var(--ink);
+    }
+    .role li + li, .card li + li { margin-top: 0.25rem; }
+
+    /* Projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.15rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 1.7rem 1.65rem 1.6rem;
+    }
+
+    .card.featured {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .card.featured h3,
+    .card.featured .meta { color: var(--white); }
+    .card.featured .meta { opacity: 0.72; }
+    .card.featured p, .card.featured li { color: rgba(255,255,255,0.88); }
+    .card.featured a { color: var(--gold-soft); }
+    .card.featured a:hover { color: var(--white); }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid currentColor;
+      padding: 0.22rem 0.5rem;
+      opacity: 0.85;
+    }
+
+    /* Forensics */
+    .meet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.15rem;
+    }
+
+    .result-list {
+      list-style: none;
+      margin: 0.85rem 0 0;
+    }
+    .result-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--line);
+      font-weight: 500;
+    }
+    .result-list .place { color: var(--navy-soft); font-weight: 700; white-space: nowrap; }
+    .card.featured .result-list li { border-color: rgba(255,255,255,0.15); }
+    .card.featured .result-list .place { color: var(--gold-soft); }
+
+    /* Education extras */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.15rem;
+    }
+
+    .split-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+    }
+
+    .pill {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 0.28rem 0.7rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    /* Recs */
+    .rec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.15rem;
+    }
+
+    .rec {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 1.6rem 1.55rem;
+    }
+
+    .rec p { font-size: 1.02rem; }
+    .rec footer {
+      margin-top: 1.1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--line);
+    }
+    .rec .who { font-weight: 700; color: var(--navy); }
+    .rec .title { color: var(--muted); font-size: 0.9rem; }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.85rem;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--navy);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.78);
+      padding: 2.5rem 0;
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin-inline: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .site-footer a { color: var(--gold-soft); text-decoration: none; }
+    .site-footer a:hover { color: var(--white); text-decoration: underline; }
+
+    .footer-links { display: flex; gap: 1.25rem; }
+
+    /* Mobile */
+    @media (max-width: 840px) {
+      .hero-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .hero-meta .dot { display: none; }
+      main section { padding: 2.75rem 0; }
+
+      .hero-inner,
+      .award-grid,
+      .project-grid,
+      .meet-grid,
+      .split,
+      .split-3,
+      .rec-grid,
+      .role {
+        grid-template-columns: 1fr;
+      }
+
+      .role { gap: 0.35rem; }
+      .hero { padding: 3.5rem 0 3.25rem; }
+      .monogram { width: 6.25rem; height: 6.25rem; font-size: 2.3rem; }
+      main section { padding: 3.15rem 0; }
+    }
+
+    @media (max-width: 1040px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-list {
+        display: none;
+        position: absolute;
+        left: 0; right: 0;
+        top: 100%;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 0.5rem 1.25rem 1.1rem;
+        gap: 0;
+        border-bottom: 1px solid rgba(184,149,90,0.28);
+      }
+      .nav-list a { display: block; padding: 0.55rem 0; font-size: 0.95rem; }
+      #nav-toggle:checked ~ nav .nav-list { display: flex; }
+      .logo-name { display: none; }
+      .header-inner { position: relative; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="Warren Daisey home">
+        <span class="logo-mark" aria-hidden="true">WD</span>
+        <span class="logo-name">Warren Daisey</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" hidden>
+      <label class="nav-toggle" for="nav-toggle" aria-controls="site-nav">Menu</label>
+      <nav aria-label="Primary" id="site-nav">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#forensics">Forensics</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#volunteering">Service</a></li>
+          <li><a href="#publications">Writing</a></li>
+          <li><a href="#recommendations">Recommendations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="monogram" aria-hidden="true">WD</div>
+      <div>
+        <p class="eyebrow">Commonwealth University–Bloomsburg</p>
+        <h1>Warren Daisey <span class="pronouns">he/him</span></h1>
+        <p class="headline">Award-winning, results-driven Biomedical Science &amp; Political Science student. Pre-Law concentration, with minors in Professional Sales and Black Studies. Aspiring biomedical sales professional.</p>
+        <p class="hero-meta">
+          <span>Bloomsburg, Pennsylvania</span>
+          <span><span class="dot" aria-hidden="true"></span>500+ LinkedIn connections</span>
+          <span><span class="dot" aria-hidden="true"></span>1,221 followers</span>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/warren-daisey" rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a>
+          <a class="btn btn-ghost" href="https://foldoutfit.com" rel="noopener noreferrer" target="_blank">Fold-Out-Fit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="about">
+      <div class="wrap prose">
+        <p class="section-kicker">Introduction</p>
+        <h2>About</h2>
+        <p>Warren Daisey is a student at Commonwealth University–Bloomsburg pursuing a bachelor’s in Biomedical Science and Political Science, with a Pre-Law concentration and minors in Professional Sales and Black Studies. His goal is a career in biomedical sales, bringing science, communication, and strategy together.</p>
+        <p>Driven and competitive, he enjoys building relationships, solving problems, and creating value through clear communication and strategic thinking. He does his best work in fast-paced environments, and cares about professional growth, technical sales, and results — with an interest in building long-term partnerships.</p>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <div class="wrap">
+        <p class="section-kicker">Recognition</p>
+        <h2>Highlights &amp; Awards</h2>
+        <div class="award-grid">
+          <article class="award">
+            <p class="award-place">1st Place · $500</p>
+            <h3>Quick Pitch Sales Challenge</h3>
+            <p>Susquehanna University, Sigmund Weis School of Business, October 2026. First of 65 competitors across four universities. Sponsored by Fastenal.</p>
+          </article>
+          <article class="award">
+            <p class="award-place">1st Place · $3,500</p>
+            <h3>Husky Dog Pound</h3>
+            <p>First place and $3,500 awarded to Fold-Out-Fit, Warren’s patent-pending carry bag that unfolds into hanging shelves.</p>
+          </article>
+          <article class="award">
+            <p class="award-place">Semi-Finalist</p>
+            <h3>Keystone Sales Challenge 2026</h3>
+            <p>Pi Sigma Epsilon competition sponsored by Sherwin-Williams. Finished second in his room.</p>
+          </article>
+          <article class="award">
+            <p class="award-place">Semifinalist</p>
+            <h3>Commonwealth University Sales Contest</h3>
+            <p>October 2026 contest sponsored by Cintas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <p class="section-kicker">Work &amp; leadership</p>
+        <h2>Experience</h2>
+
+        <article class="role">
+          <p class="role-dates">Feb 2026 – Present</p>
+          <div>
+            <h3>Sales &amp; Technical Lead</h3>
+            <p class="meta">Pridefit · Part-time · Remote</p>
+            <ul>
+              <li>Lead generation, outreach, pipeline, and closing</li>
+              <li>Coding apps, websites, and internal tools across the front and back end</li>
+              <li>Systems implementation and third-party integrations</li>
+              <li>Data analytics and KPIs, plus executive assistant duties</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="role-dates">Jan 2025 – Present</p>
+          <div>
+            <h3>Member</h3>
+            <p class="meta">Pi Sigma Epsilon</p>
+            <ul>
+              <li>Workshops in sales, marketing, and business strategy</li>
+              <li>Mentorship and professional networking</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="role-dates">Jan 2025 – Present</p>
+          <div>
+            <h3>Member</h3>
+            <p class="meta">NSLS</p>
+            <ul>
+              <li>Leadership training and Speaker Broadcasts</li>
+              <li>Community service and Success Networking Teams</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="role-dates">Jan 2025 – Present</p>
+          <div>
+            <h3>Logistics Coordinator</h3>
+            <p class="meta">Sunrise Movement</p>
+            <ul>
+              <li>Planned climate advocacy rallies and workshops for 100+ people, including timelines and contingency plans</li>
+              <li>Worked with media and community partners</li>
+              <li>Coordinated with Bloomsburg Police on safety</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <p class="role-dates">Dec 2024 – Present</p>
+          <div>
+            <h3>Secretary</h3>
+            <p class="meta">Political Science Students’ Association · Member, Sep–Dec 2024</p>
+            <ul>
+              <li>Supports weekly policy forums</li>
+              <li>Serves as a resource for students and professors</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <p class="section-kicker">Selected work</p>
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <article class="card featured">
+            <p class="section-kicker">Jan 2026 – Present · Patent pending</p>
+            <h3>Fold-Out-Fit</h3>
+            <p class="meta">Product · Waitlist at <a href="https://foldoutfit.com" rel="noopener noreferrer" target="_blank">foldoutfit.com</a></p>
+            <p style="margin-top:0.85rem;">A carry bag, about 16 by 11.5 inches, that unfolds into three shelves for clothes and hangs from a stall-door hook. A prototype has been built, investor materials prepared, and manufacturers sourced at a unit cost of about $7–8.</p>
+            <div class="tag-row">
+              <span class="tag">Patent pending</span>
+              <span class="tag">35K+ content views</span>
+              <span class="tag">1st Place, Husky Dog Pound</span>
+            </div>
+          </article>
+          <article class="card">
+            <p class="section-kicker">October 2026</p>
+            <h3>Money 101</h3>
+            <p class="meta">The Financial Playbook Every College Student Needs</p>
+            <p style="margin-top:0.85rem;">A personal finance workshop presented at the 2026 PASSHE Summit in Kutztown.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="forensics">
+      <div class="wrap">
+        <p class="section-kicker">Speech &amp; Debate</p>
+        <h2>Forensics Results</h2>
+        <div class="meet-grid">
+          <article class="card">
+            <h3>CFA Holiday Tournament</h3>
+            <ul class="result-list">
+              <li><span>Impromptu</span><span class="place">1st Place</span></li>
+              <li><span>Prose</span><span class="place">Finals</span></li>
+              <li><span>Poetry</span><span class="place">Finals</span></li>
+              <li><span>Persuasive</span><span class="place">Finals</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Patti Frieda Memorial Invitational</h3>
+            <p class="meta">November 2026</p>
+            <ul class="result-list">
+              <li><span>Persuasive</span><span class="place">2nd Place</span></li>
+              <li><span>Prose</span><span class="place">3rd Place</span></li>
+              <li><span>Poetry</span><span class="place">3rd Place</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <p class="section-kicker">Academics</p>
+        <h2>Education &amp; Activities</h2>
+        <article class="card" style="margin-bottom:1.15rem;">
+          <h3>Commonwealth University–Bloomsburg</h3>
+          <p class="meta">Bachelor’s in Biomedical Science and Political Science, Pre-Law concentration · 2024–2028</p>
+          <p style="margin-top:0.7rem;">Minors in Professional Sales and Black Studies. ALEKS PPL score of 97% (September 2025). Elementary German.</p>
+        </article>
+        <div class="split">
+          <article class="card">
+            <h3>Study &amp; research abroad</h3>
+            <p style="margin-top:0.7rem;">IES Abroad Berlin research internship, <cite>A Genealogy of Migrant Health and Death Care in Berlin</cite>. Three months of solo travel in Europe.</p>
+          </article>
+          <article class="card">
+            <h3>Selected events</h3>
+            <ul style="margin-top:0.7rem;">
+              <li>LSAC NY JD Forum</li>
+              <li>Honors College Speak Out Panel</li>
+              <li>APSCUF Affordable College Now rally at the Pennsylvania Capitol</li>
+            </ul>
+          </article>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <h3>Campus activities</h3>
+          <div class="pill-list">
+            <span class="pill">PRSSA</span>
+            <span class="pill">CRU</span>
+            <span class="pill">NAACP</span>
+            <span class="pill">Model UN</span>
+            <span class="pill">Speech and Debate</span>
+            <span class="pill">FDI</span>
+            <span class="pill">CGA</span>
+            <span class="pill">FBLA</span>
+            <span class="pill">RCC</span>
+            <span class="pill">POSSA</span>
+            <span class="pill">Gospel Choir</span>
+            <span class="pill">The Voice</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="volunteering">
+      <div class="wrap">
+        <p class="section-kicker">Community</p>
+        <h2>Volunteering &amp; Organizations</h2>
+        <div class="split-3">
+          <article class="card">
+            <h3>American Red Cross</h3>
+            <p class="meta">Member · Fundraising volunteer, Mar 2022–Present</p>
+            <p style="margin-top:0.7rem;">Supports fundraising through posts and event donations, and participates in blood donation.</p>
+          </article>
+          <article class="card">
+            <h3>Jack &amp; Jill of America</h3>
+            <p class="meta">Chester County Chapter · 2019 – Present</p>
+            <p style="margin-top:0.7rem;">Involvement includes Gavel Club, the Executive Board, and speaking competitions.</p>
+          </article>
+          <article class="card">
+            <h3>Camp Invention</h3>
+            <p class="meta">Counselor · 2018</p>
+            <p style="margin-top:0.7rem;">Counselor for a STEAM program.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="wrap">
+        <p class="section-kicker">The Voice</p>
+        <h2>Publications</h2>
+        <article class="card">
+          <h3>HOWL Editor, <cite>The Voice</cite></h3>
+          <p class="meta">27 articles</p>
+          <p style="margin-top:0.7rem;">Writing includes “Professor Fashion: The Curated Style of Dr. Sachar” and “Topics That Matter: FDI Poster Session” (April 2026).</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="recommendations">
+      <div class="wrap">
+        <p class="section-kicker">What colleagues have said</p>
+        <h2>Recommendations</h2>
+        <div class="rec-grid">
+          <blockquote class="rec">
+            <p>In a recommendation, Novalea Eckenroad recalled working with Warren at <cite>The Voice</cite>, where he ran the largest section. She pointed to consistent, timely work and noted that he takes direction well.</p>
+            <footer>
+              <div class="who">Novalea Eckenroad</div>
+              <div class="title">Communication Coordinator, Pennsylvania House of Representatives</div>
+            </footer>
+          </blockquote>
+          <blockquote class="rec">
+            <p>Nathan Conroy, who mentored Warren in the William and Elizabeth Bent Bootcamp for Aspiring Leaders, has described him as outgoing and ambitious, an outstanding ambassador for the university, and a leader among his peers.</p>
+            <footer>
+              <div class="who">Nathan Conroy</div>
+              <div class="title">Director of Alumni &amp; Employer Engagement<br>Commonwealth University–Bloomsburg</div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <p class="section-kicker">Capabilities</p>
+        <h2>Skills</h2>
+        <div class="skills">
+          <span class="skill">Professional Networking</span>
+          <span class="skill">Leadership Development</span>
+          <span class="skill">Marketing Communications</span>
+          <span class="skill">Community Service</span>
+          <span class="skill">Crisis Management</span>
+          <span class="skill">Media Relations</span>
+          <span class="skill">Student Leadership</span>
+          <span class="skill">Academic Engagement</span>
+          <span class="skill">Debate</span>
+          <span class="skill">Sales</span>
+          <span class="skill">Public Speaking</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Warren Daisey · Bloomsburg, Pennsylvania</p>
+      <p class="footer-links">
+        <a href="https://www.linkedin.com/in/warren-daisey" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+        <a href="https://foldoutfit.com" rel="noopener noreferrer" target="_blank">foldoutfit.com</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
